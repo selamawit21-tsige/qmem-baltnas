@@ -1,0 +1,393 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-amharic: 'Noto Sans Ethiopic', 'Nyala', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, .font-serif-luxury {
+    font-family: var(--font-serif);
+  }
+}
+
+@keyframes luxuryShine {
+  0% {
+    transform: translateX(-150%) skewX(-20deg);
+  }
+  50%, 100% {
+    transform: translateX(250%) skewX(-20deg);
+  }
+}
+
+@keyframes subtleFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-shine {
+  animation: luxuryShine 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-float-slow {
+  animation: subtleFloat 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: subtleFloat 6s ease-in-out 3s infinite;
+}
+
+@keyframes bubbleFloat {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-6px) scale(1.02);
+  }
+}
+
+@keyframes bubbleFloatAlt {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.03);
+  }
+}
+
+@keyframes layerWave {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-25%) translateZ(0) scaleY(1.05);
+  }
+  100% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
+}
+
+@keyframes spiceSway {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-3deg);
+  }
+  75% {
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes simmerPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+/* Page Motion & Spice Partition Keyframes */
+@keyframes pepperBob1 {
+  0%, 100% {
+    transform: translate(180px, 35px) rotate(-15deg);
+  }
+  50% {
+    transform: translate(180px, 28px) rotate(-9deg);
+  }
+}
+
+@keyframes pepperBob2 {
+  0%, 100% {
+    transform: translate(620px, 42px) rotate(20deg);
+  }
+  50% {
+    transform: translate(620px, 33px) rotate(27deg);
+  }
+}
+
+@keyframes pepperBob3 {
+  0%, 100% {
+    transform: translate(980px, 32px) rotate(-10deg);
+  }
+  50% {
+    transform: translate(980px, 24px) rotate(-4deg);
+  }
+}
+
+@keyframes bubblePopA {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: translateY(-8px) scale(1.3);
+    opacity: 1;
+  }
+}
+
+@keyframes bubblePopB {
+  0%, 100% {
+    transform: translateY(0px) scale(0.9);
+    opacity: 0.75;
+  }
+  50% {
+    transform: translateY(-12px) scale(1.4);
+    opacity: 1;
+  }
+}
+
+@keyframes bubblePopC {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(-6px) scale(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes steamWaft {
+  0% {
+    transform: translateY(0px) scaleY(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-10px) scaleY(1.2) translateX(3px);
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateY(-20px) scaleY(1.4) translateX(7px);
+    opacity: 0;
+  }
+}
+
+@keyframes grainSway1 {
+  0%, 100% {
+    transform: translate(150px, 48px) rotate(25deg);
+  }
+  50% {
+    transform: translate(150px, 42px) rotate(18deg);
+  }
+}
+
+@keyframes grainSway2 {
+  0%, 100% {
+    transform: translate(480px, 36px) rotate(-30deg);
+  }
+  50% {
+    transform: translate(480px, 29px) rotate(-22deg);
+  }
+}
+
+@keyframes grainSway3 {
+  0%, 100% {
+    transform: translate(850px, 52px) rotate(45deg);
+  }
+  50% {
+    transform: translate(850px, 45px) rotate(37deg);
+  }
+}
+
+@keyframes tibebGliss {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes emberGlowPulse {
+  0%, 100% {
+    transform: scale(0.9);
+    opacity: 0.6;
+    filter: drop-shadow(0 0 2px #FF5E1E);
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 1;
+    filter: drop-shadow(0 0 8px #FF8A00);
+  }
+}
+
+@keyframes leafDrift {
+  0%, 100% {
+    transform: rotate(0deg) translateY(0);
+  }
+  50% {
+    transform: rotate(7deg) translateY(-5px);
+  }
+}
+
+@keyframes smokeCurl {
+  0% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-7px) translateX(8px);
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateY(-16px) translateX(16px);
+    opacity: 0.1;
+  }
+}
+
+@keyframes ambientSpiceDrift {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.8);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.6;
+  }
+  85% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-140px) translateX(25px) scale(1.1);
+    opacity: 0;
+  }
+}
+
+.animate-bubble {
+  animation: bubbleFloat 4s ease-in-out infinite;
+}
+
+.animate-bubble-alt {
+  animation: bubbleFloatAlt 5s ease-in-out 1.5s infinite;
+}
+
+.animate-layer-wave {
+  animation: layerWave 18s ease-in-out infinite;
+}
+
+.animate-spice-sway {
+  animation: spiceSway 6s ease-in-out infinite;
+}
+
+.animate-simmer-pulse {
+  animation: simmerPulse 3s ease-in-out infinite;
+}
+
+/* Motion classes */
+.animate-pepper-1 {
+  animation: pepperBob1 4.5s ease-in-out infinite;
+  transform-origin: center;
+}
+.animate-pepper-2 {
+  animation: pepperBob2 5s ease-in-out 0.7s infinite;
+  transform-origin: center;
+}
+.animate-pepper-3 {
+  animation: pepperBob3 4.2s ease-in-out 1.4s infinite;
+  transform-origin: center;
+}
+.animate-bubble-pop-a {
+  animation: bubblePopA 2.5s ease-in-out infinite;
+  transform-origin: center;
+}
+.animate-bubble-pop-b {
+  animation: bubblePopB 3.2s ease-in-out 0.6s infinite;
+  transform-origin: center;
+}
+.animate-bubble-pop-c {
+  animation: bubblePopC 2.8s ease-in-out 1.1s infinite;
+  transform-origin: center;
+}
+.animate-steam-waft {
+  animation: steamWaft 3.5s ease-in-out infinite;
+}
+.animate-steam-waft-delayed {
+  animation: steamWaft 4.2s ease-in-out 1.2s infinite;
+}
+.animate-grain-1 {
+  animation: grainSway1 6s ease-in-out infinite;
+}
+.animate-grain-2 {
+  animation: grainSway2 5.5s ease-in-out 1s infinite;
+}
+.animate-grain-3 {
+  animation: grainSway3 6.5s ease-in-out 2s infinite;
+}
+.animate-tibeb-scroll {
+  animation: tibebGliss 26s linear infinite;
+}
+.animate-ember-glow {
+  animation: emberGlowPulse 2.2s ease-in-out infinite;
+  transform-origin: center;
+}
+.animate-ember-glow-alt {
+  animation: emberGlowPulse 2.8s ease-in-out 0.8s infinite;
+  transform-origin: center;
+}
+.animate-leaf-sway {
+  animation: leafDrift 4.8s ease-in-out infinite;
+  transform-origin: center;
+}
+.animate-smoke-curl {
+  animation: smokeCurl 5s ease-in-out infinite;
+}
+.animate-smoke-curl-alt {
+  animation: smokeCurl 6s ease-in-out 2s infinite;
+}
+.animate-ambient-spice {
+  animation: ambientSpiceDrift 14s ease-in-out infinite;
+}
+
+/* Brand Logo Pestle & Spice Essence Motion */
+@keyframes logoPestleGrind {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg) translateY(-1px);
+  }
+  75% {
+    transform: rotate(4deg) translateY(0.5px);
+  }
+}
+
+@keyframes logoSpiceSpark {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: translateY(-5px) scale(1.3);
+    opacity: 1;
+    filter: drop-shadow(0 0 4px #F2871A);
+  }
+}
+
+.animate-logo-pestle {
+  animation: logoPestleGrind 3.6s ease-in-out infinite;
+  transform-origin: 50px 68px;
+}
+
+.animate-logo-spark {
+  animation: logoSpiceSpark 2.4s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.animate-logo-spark-alt {
+  animation: logoSpiceSpark 3s ease-in-out 0.8s infinite;
+  transform-origin: center;
+}
+
+
