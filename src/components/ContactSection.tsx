@@ -22,6 +22,18 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ language }) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formState.name || !formState.email || !formState.message) return;
+
+    const subject = formState.subject || 'Inquiry / Wholesale Request';
+    const body = [
+      `Name: ${formState.name}`,
+      `Email: ${formState.email}`,
+      `Subject: ${subject}`,
+      '',
+      'Message:',
+      formState.message,
+    ].join('\n');
+
+    window.location.href = `mailto:marketing@qmembaltna.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setSubmitted(true);
     setTimeout(() => {
       setFormState({ name: '', email: '', subject: '', message: '' });
@@ -100,10 +112,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ language }) => {
                       {t.emailLabel}
                     </span>
                     <a
-                      href="mailto:info@qmembaltna.com"
+                      href="mailto:marketing@qmembaltna.com"
                       className="font-medium text-white hover:text-[#F2871A] transition-colors"
                     >
-                      info@qmembaltna.com
+                      marketing@qmembaltna.com
                     </a>
                   </div>
                 </div>

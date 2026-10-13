@@ -172,8 +172,8 @@ export const Footer: React.FC<FooterProps> = ({ language, onOpenKitchenHelper })
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-3.5 h-3.5 text-[#F2871A]" />
-                <a href="mailto:info@qmembaltna.com" className="hover:text-white transition-colors">
-                  info@qmembaltna.com
+                <a href="mailto:marketing@qmembaltna.com" className="hover:text-white transition-colors">
+                  marketing@qmembaltna.com
                 </a>
               </div>
             </div>
