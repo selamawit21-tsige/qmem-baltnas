@@ -1,8 +1,19 @@
 import React from 'react';
 import { Currency, Language, Product } from '../types';
 import { TRANSLATIONS } from '../data/translations';
-import { SpiceVisual } from './SpiceVisual';
 import { ArrowRight, Sparkles, CheckCircle2 } from 'lucide-react';
+
+import berbereImage from '../images/Berbere.jpg';
+import mitmitaImage from '../images/Mitimita.jpg';
+import shiroImage from '../images/Nech Shiro.jpg';
+import genfoImage from '../images/Ye Atmit Ehel.jpg';
+
+const heroImages: Record<string, string> = {
+  berbere: berbereImage,
+  mitmita: mitmitaImage,
+  shiro: shiroImage,
+  genfo: genfoImage,
+};
 
 interface HeroProps {
   language: Language;
@@ -113,11 +124,11 @@ export const Hero: React.FC<HeroProps> = ({
                       className={`group relative cursor-pointer rounded-2xl bg-white border border-[#E8DEC8] p-3 shadow-md hover:shadow-xl hover:border-[#942F12]/50 hover:-translate-y-1.5 transition-all duration-300 ${floatClass}`}
                     >
                       {/* Product Visual Container with Shine */}
-                      <div className="relative overflow-hidden rounded-xl">
-                        <SpiceVisual
-                          productId={prod.id}
-                          className="w-full h-32 sm:h-36"
-                          isFloatingHero={true}
+                      <div className="relative overflow-hidden rounded-xl bg-[#F7F1EA]">
+                        <img
+                          src={heroImages[prod.id]}
+                          alt={prod.name[language]}
+                          className="w-full h-32 sm:h-36 object-contain rounded-xl"
                         />
 
                         {/* Top Badge */}
