@@ -19,25 +19,43 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ language }) => {
 
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formState.name || !formState.email || !formState.message) return;
 
     const subject = formState.subject || 'Inquiry / Wholesale Request';
-    const body = [
-      `Name: ${formState.name}`,
-      `Email: ${formState.email}`,
-      `Subject: ${subject}`,
-      '',
-      'Message:',
-      formState.message,
-    ].join('\n');
+    const payload = {
+      name: formState.name,
+      email: formState.email,
+      subject,
+      message: formState.message,
+      _subject: subject,
+      _captcha: 'false',
+      _template: 'table',
+    };
 
-    window.location.href = `mailto:marketing@qmembaltna.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    setSubmitted(true);
-    setTimeout(() => {
-      setFormState({ name: '', email: '', subject: '', message: '' });
-    }, 2000);
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/marketing@qmembaltna.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error('Submission failed');
+      }
+
+      setSubmitted(true);
+      setTimeout(() => {
+        setFormState({ name: '', email: '', subject: '', message: '' });
+      }, 2000);
+    } catch (error) {
+      console.error('Failed to send inquiry', error);
+      alert('The form could not be sent right now. Please email marketing@qmembaltna.com directly.');
+    }
   };
 
   return (
